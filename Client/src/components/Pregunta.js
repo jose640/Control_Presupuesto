@@ -1,4 +1,5 @@
-import { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
+import PropTypes from 'prop-types';
 import Error from "./Error";
 
 const Pregunta = ({setPresupuesto, setRestante, setMostrarpregunta}) => {
@@ -51,5 +52,11 @@ const Pregunta = ({setPresupuesto, setRestante, setMostrarpregunta}) => {
     </Fragment>
   );
 };
+
+Pregunta.propTypes = {
+  setPresupuesto: PropTypes.func.isRequired,
+  setRestante: PropTypes.func.isRequired,
+  setMostrarpregunta: PropTypes.func.isRequired
+}
 
 export default Pregunta;

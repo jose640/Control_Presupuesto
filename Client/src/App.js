@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from "react";
 import Pregunta from "./components/Pregunta";
-import { useState, useEffect } from "react";
 import Formulario from "./components/Formulario";
 import Listado from "./components/Listado";
 import ControlPresupuesto from "./components/ControlPresupuesto";
@@ -16,6 +16,7 @@ function App() {
   //Cuando agreguemos un nuevo gasto
   //UseEffect que actualiza el restante
   useEffect(() => {
+
     if(creargasto){
       //Agrega el nuevo presupuesto
       setGastos([...gastos, gasto]);
@@ -28,7 +29,7 @@ function App() {
       setCreargasto(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gasto]);
+  }, [gasto, creargasto, gastos, restante]);
 
 
   return (
